@@ -33,12 +33,16 @@ void demo1()
     enum spectrum band;
 
     band = blue;
-    band = 2000;
+    assert(band == 4);
+    // band = 2000;
 
     band = orange;
-    ++band;
-    band = orange + red;
-
+    ++band; // yellow
+    assert(band == yellow);
+    band = orange + red; // orange
+    assert(band == orange);
+    band = ultraviolet / orange;
+    printf("%d\n", band);
     int color = 3;
     band = 3;
     color = 3 + red;
@@ -63,8 +67,15 @@ void demo2()
     enum strange
     {
         zero,
-        null = 0,
-        one,
-        numer_uno = 1
+        null = -2,
+        ones,
+        numer_uno = -300,
+        test
     };
 }
+
+// input : int n ; int a[n]:
+// a[i] = 999 : 在这个枚举中第i个属性没赋值
+// a[i] = other: 在这个枚举中第i个属性赋值为 other
+
+// outputs : n 个枚举属性的值
